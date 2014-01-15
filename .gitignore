@@ -1,0 +1,6 @@
+/myDatabase
+/TestingDB.hs
+/PasswordDB.hs
+/dist
+*.hi
+*.o
