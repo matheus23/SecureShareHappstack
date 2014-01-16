@@ -14,7 +14,7 @@ main = serve (Just serverConf) pages
 pages :: ServerPart Response
 pages = msum [
     dir "static" $ serveDirectory DisableBrowsing [] "./public",
-    dir "register" $ ok $ toResponse $ registerPage,
+    dir "register" $ registerPage,
     defaultPage
   ]
 

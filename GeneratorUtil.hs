@@ -20,7 +20,7 @@ formLineTemplate :: String -> String -> TextInputType -> Html
 formLineTemplate inputDescription inputName inputType = 
   H.tr $ do
     H.td ! A.class_ "rightAlign" $ (toHtml inputDescription)
-    H.td $ H.input ! A.type_ inputTypeAttribute ! A.name (toValue inputName) ! A.id (toValue inputName)
+    H.td $ H.input ! A.type_ inputTypeAttribute ! A.name (toValue inputName) ! A.id (toValue inputName) ! A.required ""
   where
     inputTypeAttribute = toValue $ map (toLower) (show inputType)
 

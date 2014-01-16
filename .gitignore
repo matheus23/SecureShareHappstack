@@ -1,6 +1,6 @@
 /myDatabase
+/users
 /TestingDB.hs
-/PasswordDB.hs
 /dist
 *.hi
 *.o
