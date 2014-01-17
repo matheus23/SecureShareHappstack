@@ -13,6 +13,7 @@ data Message = Message {
   message :: String
 }
 
+iconBasePath :: String
 iconBasePath = "/static/img/"
 
 iconPath :: MessageType -> String

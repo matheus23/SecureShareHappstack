@@ -9,11 +9,12 @@ import Data.SafeCopy
 import qualified Data.Map as M (Map, lookup, insert, empty)
 
 type Email = String
---data UserInfo = UserInfo { passwordHash :: String } deriving (Show, Read)
+-- data UserInfo = UserInfo { passwordHash :: String }
 type UserInfo = String
-data Database = Database (M.Map Email UserInfo)
+data Database = Database !(M.Map Email UserInfo)
 type User = (Email, UserInfo)
 
+-- $(deriveSafeCopy 0 'base ''UserInfo)
 $(deriveSafeCopy 0 'base ''Database)
 
 addUser :: User -> Update Database ()
@@ -28,5 +29,5 @@ getUserInfo email = do
 
 $(makeAcidic ''Database ['addUser, 'getUserInfo])
 
-openUserDB ::IO (AcidState Database)
+openUserDB :: IO (AcidState Database)
 openUserDB = openLocalStateFrom "users/" (Database M.empty)

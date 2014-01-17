@@ -19,6 +19,7 @@ executable Webserver
   main-is:             Main.hs
   -- other-modules:       
   other-extensions:    OverloadedStrings, ScopedTypeVariables
-  build-depends:       base >=4.6 && <4.7, text >=0.11 && <0.12, happstack-lite >=7.3 && <7.4, blaze-html >=0.6 && <0.7, containers, safecopy, mtl, acid-state
+  build-depends:       base >=4.6 && <4.7, text >=0.11 && <0.12, happstack-lite >=7.3 && <7.4, blaze-html >=0.6 && <0.7, 
+                       containers, safecopy, mtl, acid-state, happstack-server, transformers
   -- hs-source-dirs:      
   default-language:    Haskell2010
