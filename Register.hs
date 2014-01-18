@@ -24,7 +24,7 @@ showRegisterPage msgs = template headHtml bodyHtml
       generateHeader "SecureShare"
       H.div ! A.style "text-align: center" $ H.h1 "Register Account"
       H.div ! A.style "text-align: center" $
-        H.form ! A.action "/registerProcess" ! A.method "GET" ! A.style "display: inline-block" $
+        H.form ! A.action "/register/process" ! A.method "GET" ! A.style "display: inline-block" $
           H.table $ do
             formLineTemplate "Name:" "name" Text
             formLineTemplate "Email:" "email" Email
@@ -38,7 +38,7 @@ showRegisterPage msgs = template headHtml bodyHtml
       (generateMessages msgs)
 
 registerPage :: ServerPart Response
-registerPage = msum [ viewRegisterPage, processRegisterPage ]
+registerPage = msum [ dir "view" $ viewRegisterPage, dir "process" $ processRegisterPage ]
 
 viewRegisterPage :: ServerPart Response
 viewRegisterPage = do
