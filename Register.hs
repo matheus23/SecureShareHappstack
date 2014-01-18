@@ -26,10 +26,10 @@ showRegisterPage msgs = template headHtml bodyHtml
       H.div ! A.style "text-align: center" $
         H.form ! A.action "/register/process" ! A.method "GET" ! A.style "display: inline-block" $
           H.table $ do
-            formLineTemplate "Name:" "name" Text
-            formLineTemplate "Email:" "email" Email
-            formLineTemplate "Password:" "password" Password
-            formLineTemplate "Repeat Password:" "password_repeat" Password
+            formLineTemplateTr "Name:" "name" Text
+            formLineTemplateTr "Email:" "email" Email
+            formLineTemplateTr "Password:" "password" Password
+            formLineTemplateTr "Repeat Password:" "password_repeat" Password
             H.tr $ do
               H.td ""
               H.td $ do

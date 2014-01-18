@@ -16,8 +16,8 @@ type JsFile = String
 type CssFile = String
 
 
-formLineTemplate :: String -> String -> TextInputType -> Html
-formLineTemplate inputDescription inputName inputType = 
+formLineTemplateTr :: String -> String -> TextInputType -> Html
+formLineTemplateTr inputDescription inputName inputType = 
   H.tr $ do
     H.td ! A.class_ "rightAlign" $ (toHtml inputDescription)
     H.td $ H.input ! A.type_ inputTypeAttribute ! A.name (toValue inputName) ! A.id (toValue inputName) ! A.required ""
